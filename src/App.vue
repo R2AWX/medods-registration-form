@@ -1,12 +1,20 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view />
+    <header>
+      <img src="./assets/logo.png" alt="Логотип" />
+      <h1>Регистрационная форма клиники</h1>
+    </header>
+    <main>
+      <router-view />
+    </main>
   </div>
 </template>
+
+<script>
+export default {
+  name: "App",
+};
+</script>
 
 <style lang="scss">
 #app {
@@ -17,16 +25,19 @@
   color: #2c3e50;
 }
 
-nav {
-  padding: 30px;
+header {
+  background-color: #f5f5f5;
+  padding: 20px;
+  margin-bottom: 20px;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+header img {
+  max-width: 100px;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+main {
+  margin: 0 auto;
+  width: 80%;
+  max-width: 600px;
 }
 </style>
