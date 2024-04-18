@@ -4,7 +4,7 @@
     <p>
       Для регистрации нового клиента, пожалуйста, перейдите к форме регистрации.
     </p>
-    <router-link to="/personal-details">Начать регистрацию</router-link>
+    <router-link to="/step-1">Начать регистрацию</router-link>
   </div>
 </template>
 
@@ -13,20 +13,3 @@ export default {
   name: "HomeView",
 };
 </script>
-
-<style lang="scss" scoped>
-.home {
-  text-align: center;
-  margin-top: 50px;
-}
-
-.router-link {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 15px;
-  background-color: #42b983;
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-}
-</style>

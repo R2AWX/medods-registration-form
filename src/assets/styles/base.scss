@@ -1,0 +1,23 @@
+body {
+  font-family: $ff-default;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: $color-madison;
+}
+
+header {
+  background-color: $color-alabaster;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+header img {
+  max-width: 100px;
+}
+
+main {
+  margin: 0 auto;
+  width: 80%;
+  max-width: 600px;
+}

@@ -17,20 +17,19 @@ export default new Router({
       component: HomeView,
     },
     {
-      path: "/personal-details",
+      path: "/step-1",
       name: "personalDetails",
       component: PersonalDetails,
     },
     {
-      path: "/address-details",
+      path: "/step-2",
       name: "addressDetails",
       component: AddressDetails,
     },
     {
-      path: "/passport-details",
+      path: "/step-3",
       name: "passportDetails",
       component: PassportDetails,
     },
-    // Другие маршруты...
   ],
 });
