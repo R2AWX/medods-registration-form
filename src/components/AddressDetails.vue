@@ -63,9 +63,18 @@
 
 <script>
 import { required } from "vuelidate/lib/validators";
-import router from "@/router";
+import { formMixin } from "@/mixins/formMixin";
 
 export default {
+  mixins: [formMixin],
+  props: {
+    formData: Object,
+  },
+  mounted() {
+    if (this.formData) {
+      this.form = { ...this.formData };
+    }
+  },
   data() {
     return {
       form: {
@@ -106,46 +115,6 @@ export default {
   computed: {
     isCityValid() {
       return this.$v.form.city.$dirty && !this.$v.form.city.$error;
-    },
-  },
-  methods: {
-    validateForm() {
-      this.$v.form.$touch();
-      if (!this.$v.form.$invalid) {
-        if (this.step === 3) {
-          this.sendData();
-        } else {
-          this.step++;
-          router.push(`/step-${this.step}`);
-        }
-      }
-    },
-    goBack() {
-      if (this.step > 1) {
-        this.step--;
-        router.push(`/step-${this.step}`);
-      } else {
-        router.push("/");
-      }
-    },
-    sendData() {
-      fetch("https://webhook.site/29be5378-febb-48a8-8cbe-80c190cec7dc", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        mode: "no-cors",
-        body: JSON.stringify(this.form),
-      })
-        .then(() => {
-          alert(
-            "Данные успешно отправлены, но ответ не может быть прочитан из-за CORS политики."
-          );
-        })
-        .catch((error) => {
-          console.error("Ошибка при отправке данных:", error);
-          alert("Ошибка при отправке данных.");
-        });
     },
   },
 };

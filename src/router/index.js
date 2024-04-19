@@ -18,18 +18,21 @@ export default new Router({
     },
     {
       path: "/step-1",
-      name: "personalDetails",
+      name: "step1",
       component: PersonalDetails,
+      props: true,
     },
     {
       path: "/step-2",
-      name: "addressDetails",
+      name: "step2",
       component: AddressDetails,
+      props: true,
     },
     {
       path: "/step-3",
-      name: "passportDetails",
+      name: "step3",
       component: PassportDetails,
+      props: true,
     },
   ],
 });
